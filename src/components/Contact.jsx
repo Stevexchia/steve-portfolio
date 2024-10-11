@@ -50,23 +50,23 @@ const Contact = () => {
       <div className="mt-10 text-center text-gray-400 text-sm">
         <p>
           Loosely designed in{" "}
-          <span className="hover:text-blue-400 hover:brightness-125 transition duration-200">
+          <span className="hover:text-blue-400 hover:brightness-125 transition duration-200 font-semibold text-gray-300">
             Figma
           </span>{" "}
           and coded in{" "}
-          <span className="hover:text-purple-400 hover:brightness-125 transition duration-200">
+          <span className="hover:text-purple-400 hover:brightness-125 transition duration-200 font-semibold text-gray-300">
             Visual Studio Code
           </span>{" "}
           by yours truly. Built with{" "}
-          <span className="hover:text-cyan-400 hover:brightness-125 transition duration-200">
+          <span className="hover:text-cyan-400 hover:brightness-125 transition duration-200 font-semibold text-gray-300">
             React
           </span>{" "}
           and{" "}
-          <span className="hover:text-sky-400 hover:brightness-125 transition duration-200">
+          <span className="hover:text-sky-400 hover:brightness-125 transition duration-200 font-semibold text-gray-300">
             Tailwind CSS
           </span>
           , deployed with{" "}
-          <span className="hover:text-yellow-400 hover:brightness-125 transition duration-200">
+          <span className="hover:text-yellow-400 hover:brightness-125 transition duration-200 font-semibold text-gray-300">
             Vercel
           </span>
           .
