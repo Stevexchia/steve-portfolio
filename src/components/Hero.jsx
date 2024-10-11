@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { HERO } from "../constants";
 import roundedTextImg from "../assets/rounded-text.png";
-import circleStarImg from "./circle-star.svg";
 import { HiArrowDown } from "react-icons/hi";
 import { FaHandPointUp } from "react-icons/fa"; // Importing hand icon
 import { motion } from "framer-motion";
@@ -11,6 +10,7 @@ const Hero = () => {
   const [visible, setVisible] = useState(true); // State for visibility
   const [typingText, setTypingText] = useState(""); // State for typed text
   const typingSpeed = 150; // Speed of typing effect
+  const circleStarImg = "/circle-star.svg";
 
   useEffect(() => {
     const interval = setInterval(() => {
