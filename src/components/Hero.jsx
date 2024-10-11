@@ -93,7 +93,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="mb-8 p-2 text-xl"
         >
-          I am a{" "}
+          I a{" "}
           <span className="text-pink-500 font-bold">{typingText}</span>{" "}
           with a passion for exploring how technology can solve real-world problems.
         </motion.p>
