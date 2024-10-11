@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { HERO } from "../constants";
 import roundedTextImg from "../assets/rounded-text.png";
-import circleStarImg from "../assets/circle-star.svg";
+import circleStarImg from "./circle-star.svg";
 import { HiArrowDown } from "react-icons/hi";
 import { FaHandPointUp } from "react-icons/fa"; // Importing hand icon
 import { motion } from "framer-motion";
