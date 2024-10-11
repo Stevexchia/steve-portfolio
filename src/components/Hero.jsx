@@ -95,7 +95,7 @@ const Hero = () => {
         >
           I am a{" "}
           <span className="text-pink-500 font-bold">{typingText}</span>{" "}
-          with a passion for exploring how technology can solve real-world problems.
+          passionate about using technology to solve real-world problems.
         </motion.p>
 
         <div className="flex items-center mx-auto xl:mx-0 relative z-10">
