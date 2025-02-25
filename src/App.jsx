@@ -26,7 +26,6 @@ const App = () => {
       requestAnimationFrame(updateLightPosition); // Call the function again for the next frame
     };
 
-    // Start the animation loop
     requestAnimationFrame(updateLightPosition);
 
     // Add mousemove event listener

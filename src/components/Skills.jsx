@@ -1,10 +1,10 @@
-import { RiReactjsLine } from "react-icons/ri";       // React
-import { FaNodeJs, FaPython, FaJs, FaDatabase, FaFireAlt, FaCuttlefish } from "react-icons/fa"; // Node.js, Python, JS, SQL, Firebase, C
+import { RiReactjsLine } from "react-icons/ri";       
+import { FaNodeJs, FaPython, FaJs, FaDatabase, FaFireAlt, FaCuttlefish, FaJava } from "react-icons/fa"; 
 import { SiTypescript } from "react-icons/si";
-import { CgCPlusPlus } from "react-icons/cg";         // C++
+import { CgCPlusPlus } from "react-icons/cg";         
 import { motion } from "framer-motion";
+import { useState } from "react";  // Import useState
 
-// Icon floating animation
 const iconVariants = (duration) => ({
   initial: { y: -10 },
   animate: {
@@ -19,14 +19,31 @@ const iconVariants = (duration) => ({
 });
 
 const Skills = () => {
+  const [litIcons, setLitIcons] = useState({});  // Track clicked (lit) icons
+
+  const handleClick = (iconName) => {
+    setLitIcons((prevState) => ({
+      ...prevState,
+      [iconName]: !prevState[iconName],  // Toggle the lit state for clicked icon
+    }));
+  };
+
+  const getIconStyle = (iconName) => {
+    if (litIcons[iconName]) {
+      return { filter: "grayscale(0%) brightness(1.5)" };  // Icon is lit
+    } else {
+      return { filter: "grayscale(100%)" };  // Icon is not lit
+    }
+  };
+
   return (
     <section className="pt-20" id="skills">
       <div className="border-b border-neutral-800 pb-24">
         <motion.h2
-            whileInView={{ opacity: 1}}
-            initial={{ opacity: 0}}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{ duration: 1 }}
-          className="my-20 text-center text-4xl"
+            className="my-20 text-center text-4xl"
         >
           Skills
         </motion.h2>
@@ -35,142 +52,36 @@ const Skills = () => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 1.5 }}
-          className="flex items-center justify-center gap-6 flex-nowrap"
+          className="flex flex-wrap items-center justify-center gap-6"
         >
-          {/* Icon 1 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(2.3)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <FaCuttlefish className="text-5xl text-blue-600 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">C</p>
-          </div>
-
-          {/* Icon 2 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(3.8)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <CgCPlusPlus className="text-5xl text-white lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">C++</p>
-          </div>
-
-          {/* Icon 3 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(2.9)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <FaJs className="text-5xl text-yellow-400 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">JavaScript</p>
-          </div>
-
-          {/* Icon 4 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(4.1)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <SiTypescript className="text-5xl text-blue-600 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">TypeScript</p>
-          </div>
-
-          {/* Icon 5 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(2.7)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <FaPython className="text-5xl text-blue-400 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">Python</p>
-          </div>
-
-          {/* Icon 6 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(3.3)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <RiReactjsLine className="text-5xl text-cyan-400 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">ReactJS</p>
-          </div>
-
-          {/* Icon 7 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(4.5)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <FaNodeJs className="text-5xl text-green-500 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">Node.js</p>
-          </div>
-
-          {/* Icon 8 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(2.2)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <FaFireAlt className="text-5xl text-orange-400 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">Firebase</p>
-          </div>
-
-          {/* Icon 9 */}
-          <div className="flex flex-col items-center">
-            <motion.div
-              variants={iconVariants(3.7)} // floating effect
-              initial="initial"
-              animate="animate"
-              whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }} // Light up and remove grayscale on hover
-              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
-              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
-            >
-              <FaDatabase className="text-5xl text-sky-700 lg:text-6xl" />
-            </motion.div>
-            <p className="text-center mt-4">SQL</p>
-          </div>
+          {/* Repeating the structure for each icon */}
+          {[
+            { icon: <FaCuttlefish className="text-5xl text-blue-600 lg:text-6xl" />, label: "C", name: "C" },
+            { icon: <CgCPlusPlus className="text-5xl text-white lg:text-6xl" />, label: "C++", name: "C++" },
+            { icon: <FaJs className="text-5xl text-yellow-400 lg:text-6xl" />, label: "JavaScript", name: "JavaScript" },
+            { icon: <SiTypescript className="text-5xl text-blue-600 lg:text-6xl" />, label: "TypeScript", name: "TypeScript" },
+            { icon: <FaPython className="text-5xl text-blue-400 lg:text-6xl" />, label: "Python", name: "Python" },
+            { icon: <RiReactjsLine className="text-5xl text-cyan-400 lg:text-6xl" />, label: "ReactJS", name: "ReactJS" },
+            { icon: <FaNodeJs className="text-5xl text-green-500 lg:text-6xl" />, label: "Node.js", name: "Node.js" },
+            { icon: <FaFireAlt className="text-5xl text-orange-400 lg:text-6xl" />, label: "Firebase", name: "Firebase" },
+            { icon: <FaDatabase className="text-5xl text-sky-700 lg:text-6xl" />, label: "SQL", name: "SQL" },
+            { icon: <FaJava className="text-5xl text-red-500 lg:text-6xl" />, label: "Java", name: "Java" },
+          ].map(({ icon, label, name }) => (
+            <div key={name} className="flex flex-col items-center">
+              <motion.div
+                variants={iconVariants(2.3)}
+                initial="initial"
+                animate="animate"
+                whileHover={{ scale: 1.2, filter: "grayscale(0%) brightness(1.5)" }}
+                onClick={() => handleClick(name)}  // Toggle on click
+                className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
+                style={getIconStyle(name)}  // Apply dynamic style based on state
+              >
+                {icon}
+              </motion.div>
+              <p className="text-center mt-4">{label}</p>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -16,7 +16,6 @@ body {
   color: #fff;
 }
 
-/* Add this for the spin animation */
 @keyframes spin-slow {
   0% {
     transform: rotate(0deg);
@@ -46,4 +45,44 @@ body {
 
 .fade-out-leave {
   opacity: 0; /* Target opacity for fade-out */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;  /* Adjust font size for mobile */
+  }
+
+  .logo {
+    width: 50px; /* Adjust logo size for mobile */
+    height: 50px;
+  }
+
+  .fade-out {
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Faster fade-out on mobile */
+  }
+
+  .fade-out-leave {
+    opacity: 0;
+  }
+
+  /* Adjust container layout for mobile */
+  .skills-container {
+    flex-direction: column;  /* Stacks items vertically */
+    align-items: center;     /* Center content */
+  }
+
+  .skill-icon {
+    margin-bottom: 10px;  /* Adjust margin for mobile */
+  }
+
+  /* Adjust font sizes for mobile */
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.25rem;  /* Smaller headings on mobile */
+  }
+
+  p, .text-center {
+    font-size: 0.875rem;  /* Adjust paragraph font size */
+  }
 }

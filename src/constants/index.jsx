@@ -9,9 +9,10 @@ import { MdEmail } from "react-icons/md";
 
 import projectImage1 from "../assets/bdaybuddy.jpeg";
 import projectImage2 from "../assets/weatherforecast.jpeg";
-import projectImage3 from "../assets/website.jpeg";
-import projectImage4 from "../assets/mbot.png";
-import projectImage5 from "../assets/alex.png";
+import projectImage3 from "../assets/piggy.jpeg";
+import projectImage4 from "../assets/website.jpeg";
+import projectImage5 from "../assets/mbot.png";
+import projectImage6 from "../assets/alex.png";
 
 export const NAVIGATION_LINKS = [
   { label: "About", href: "#about" },
@@ -86,26 +87,34 @@ export const PROJECTS = [
   },
   {
     id: 3,
-    name: "Personal Portfolio",
+    name: "Piggy ChatBot",
     description:
-      "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and contact information.",
+      "A CLI-Based Personal Assistant Chatbot that helps to keep track of various things.",
     image: projectImage3,
-    githubLink: "https://github.com/Stevexchia/steve-portfolio",
+    githubLink: "https://github.com/Stevexchia/ip",
   },
   {
     id: 4,
-    name: "mBot",
+    name: "Personal Portfolio",
     description:
-      "mBot navigates mazes by detecting paths and avoiding obstacles. It uses color detection, IR sensors, and ultrasonic sensors to find the quickest route through any challenge.",
+      "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and contact information.",
     image: projectImage4,
-    githubLink: "https://github.com/Stevexchia/mBot",
+    githubLink: "https://github.com/Stevexchia/steve-portfolio",
   },
   {
     id: 5,
+    name: "mBot",
+    description:
+      "mBot navigates mazes by detecting paths and avoiding obstacles. It uses color detection, IR sensors, and ultrasonic sensors to find the quickest route through any challenge.",
+    image: projectImage5,
+    githubLink: "https://github.com/Stevexchia/mBot",
+  },
+  {
+    id: 6,
     name: "Alex",
     description:
       "Alex locates survivors in tough environments. It uses LiDAR for mapping, powered by Arduino and Raspberry Pi 3, along with heat signature detectors, color sensors, and a buzzer to assist in rescue missions.",
-    image: projectImage5,
+    image: projectImage6,
     githubLink: "https://github.com/Stevexchia/Alex",
   },
 ];
