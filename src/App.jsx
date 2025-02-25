@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react"
+
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -69,6 +71,8 @@ const App = () => {
         <Projects />
         <Contact />
       </div>
+
+      <Analytics />
     </div>
   );
 };
